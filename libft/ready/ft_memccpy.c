@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 13:24:17 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/24 01:20:22 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/24 01:24:36 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t	cx;
+	size_t	x;
 
 	x = 0;
 	if (!dst && !src)
