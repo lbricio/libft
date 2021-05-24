@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:11:14 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/21 22:00:18 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/24 01:23:24 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t x;
+	size_t	x;
 
 	x = 0;
 	while (s[x] != 0)
