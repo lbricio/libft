@@ -6,11 +6,11 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 01:59:39 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/24 02:00:06 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/24 16:04:42 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
