@@ -6,37 +6,49 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:36:38 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/25 02:37:04 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/26 00:17:26 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static	size_t	get_width(int n)
 {
-	char	*str;
-	long	nbr;
-	size_t	size;
+	size_t	width;
 
-	nbr = n;
-	size = n > 0 ? 0 : 1;
-	nbr = nbr > 0 ? nbr : -nbr;
+	width = (n <= 0);
 	while (n)
 	{
 		n /= 10;
-		size++;
+		width++;
 	}
-	if (!(str = (char *)malloc(size + 1)))
+	return (width);
+}
+
+char	*ft_itoa(int n)
+{
+	char			*num;
+	int				rem;
+	size_t			i;
+	const char		neg = (n < 0);
+	const size_t	width = get_width(n);
+
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	num = ft_calloc(width + 1, sizeof(char));
+	if (!num)
 		return (0);
-	*(str + size--) = '\0';
-	while (nbr > 0)
+	if (neg)
+		n = -n;
+	i = 0;
+	while (i < width)
 	{
-		*(str + size--) = nbr % 10 + '0';
-		nbr /= 10;
+		rem = n % 10;
+		n = n / 10;
+		num[i] = "0123456789"[rem];
+		i++;
 	}
-	if (size == 0 && str[1] == '\0')
-		*(str + size) = '0';
-	else if (size == 0 && str[1] != '\0')
-		*(str + size) = '-';
-	return (str);
+	if (neg)
+		num[i - 1] = '-';
+	return (ft_strrev(num));
 }

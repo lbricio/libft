@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:28:42 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/25 02:37:21 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/26 00:19:04 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -35,8 +35,8 @@ static int	count_words(const char *str, char c)
 
 static char	*word_dup(const char *str, int start, int finish)
 {
-	char	*word;
 	int		i;
+	char	*word;
 
 	i = 0;
 	word = malloc((finish - start) * sizeof(char));
@@ -46,14 +46,15 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		index;
 	char	**split;
 
-	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !(split))
 		return (0);
 	i = 0;
 	j = 0;
@@ -74,4 +75,12 @@ char		**ft_split(char const *s, char c)
 }
 
 /*
+Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must be
+ended by a NULL pointer.
+
+RETURN:
+The array of new strings resulting from the split.
+NULL if the allocation fails.
 */

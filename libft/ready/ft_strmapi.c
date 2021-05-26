@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:37:53 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/25 02:37:54 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/26 00:22:25 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*str;
-	unsigned int	i;
+	char	*ret;
+	size_t	i;
 
-	if (!s || !f || !(str = ft_strdup(s)))
-		return (0);
+	if (!s || !f || !(ret = ft_strdup(s)))
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (ret[i])
 	{
-		str[i] = f(i, str[i]);
+		ret[i] = f(i, ret[i]);
 		i++;
 	}
-	return (str);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 01:31:24 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/24 01:36:01 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/25 12:44:52 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_atoi(const char *str)
 	long			sign;
 	unsigned int	i;
 
-	result = 0;
 	sign = 1;
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
@@ -30,6 +29,7 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
+	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i] - '0';
