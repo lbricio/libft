@@ -4,10 +4,6 @@
 > para que eu possa revisar no futuro. a ideia inicial é apresentar a
 > versão do manual e alguns comentários logo abaixo.
 
-> calma veloz que eu ainda não terminei o projeto.
-
-
-
 
 ## Part 1 - Libc functions
 
@@ -42,5 +38,5 @@ DESCRIPTION
      If n is zero, bzero() does nothing.
 ```
 
-
+> calma veloz que eu ainda não terminei o projeto.
 
