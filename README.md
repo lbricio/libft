@@ -144,16 +144,18 @@ SYNOPSIS
      strnlen(const char *s, size_t maxlen);
 
 DESCRIPTION
-     The strlen() function computes the length of the string s.  The strnlen() function attempts to compute the length of s, but never scans beyond the
-     first maxlen bytes of s.
+     The strlen() function computes the length of the string s.  
+     The strnlen() function attempts to compute the length of s, 
+     but never scans beyond the first maxlen bytes of s.
 
 RETURN VALUES
-     The strlen() function returns the number of characters that precede the terminating NUL character.  The strnlen() function returns either the same
-     result as strlen() or maxlen, whichever is smaller.
+     The strlen() function returns the number of characters that precede 
+     the terminating NUL character.  The strnlen() function returns either
+     the same result as strlen() or maxlen, whichever is smaller.
 ```
 
 
-### ft_strlcpy
+### ft_strlcpy and ft_strlcat
 ```c
 SYNOPSIS
      #include <string.h>
@@ -161,55 +163,44 @@ SYNOPSIS
      size_t
      strlcpy(char * restrict dst, const char * restrict src, size_t dstsize);
 
-DESCRIPTION
-     The strlcpy() functions copy strings with the same input parameters and output result as snprintf(3). strlcpy() are
-     designed to be safer, more consistent, and less error prone replacements for the easily misused functions strncpy(3).
-
-     strlcpy() take the full size of the destination buffer and guarantee NUL-termination if there is room.  Note that room for the NUL
-     should be included in dstsize.
-
-     strlcpy() copies up to dstsize - 1 characters from the string src to dst, NUL-terminating the result if dstsize is not 0.
-
-RETURN VALUES
-     Besides quibbles over the return type (size_t versus int) and signal handler safety (snprintf(3) is not entirely safe on some systems), the fol-
-     lowing two are equivalent:
-
-           n = strlcpy(dst, src, len);
-           n = snprintf(dst, len, "%s", src);
-
-     Like snprintf(3), the strlcpy() function return the total length of the string that we tried to create.  For strlcpy() that means the
-     length of src.
-```
-### ft_strlcat
-```c
-SYNOPSIS
      size_t
      strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
 
 DESCRIPTION
-     The strlcat() function concatenate strings with the same input parameters and output result as snprintf(3). strlcat are
-     designed to be safer, more consistent, and less error prone replacements for the easily misused functions strncat(3).
+     The strlcpy() and strlcat() functions copy and concatenate strings with the
+     same input parameters and output result as snprintf(3).  They are
+     designed to be safer, more consistent, and less error prone replacements
+     for the easily misused functions strncpy(3) and strncat(3).
 
-     strlcat() take the full size of the destination buffer and guarantee NUL-termination if there is room.  Note that room for the NUL
+     strlcpy() and strlcat() take the full size of the destination buffer and 
+     guarantee NUL-termination if there is room.  Note that room for the NUL
      should be included in dstsize.
 
-     strlcat() appends string src to the end of dst.  It will append at most dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
-     dstsize is 0 or the original dst string was longer than dstsize (in practice this should not happen as it means that either dstsize is incorrect
+     strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+     NUL-terminating the result if dstsize is not 0.
+
+     strlcat() appends string src to the end of dst.  It will append at most dstsize 
+     - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
+     dstsize is 0 or the original dst string was longer than dstsize (in practice
+     this should not happen as it means that either dstsize is incorrect
      or that dst is not a proper string).
 
      If the src and dst strings overlap, the behavior is undefined.
 
 RETURN VALUES
-     Besides quibbles over the return type (size_t versus int) and signal handler safety (snprintf(3) is not entirely safe on some systems), the fol-
+     Besides quibbles over the return type (size_t versus int) and signal handler 
+     safety (snprintf(3) is not entirely safe on some systems), the fol-
      lowing two are equivalent:
 
            n = strlcpy(dst, src, len);
            n = snprintf(dst, len, "%s", src);
 
-     Like snprintf(3), strlcat() functions return the total length of the string that we tried to create. 
-     For strlcat() that means the initial length of dst plus the length of src.
+     Like snprintf(3), the strlcpy() and strlcat() functions return the total length
+     of the string they tried to create.  For strlcpy() that means the
+     length of src.  For strlcat() that means the initial length of dst plus the length of src.
 ```
-### ft_strchr
+
+### ft_strchr and ft_strrchr
 ```c
 SYNOPSIS
      #include <string.h>
@@ -221,19 +212,84 @@ SYNOPSIS
      strrchr(const char *s, int c);
 
 DESCRIPTION
-     The strchr() function locates the first occurrence of c (converted to a char) in the string pointed to by s.  The terminating null character is
-     considered to be part of the string; therefore if c is `\0', the functions locate the terminating `\0'.
+     The strchr() function locates the first occurrence of c (converted to a char)
+     in the string pointed to by s.  The terminating null character is
+     considered to be part of the string; therefore if c is `\0', 
+     the functions locate the terminating `\0'.
 
-     The strrchr() function is identical to strchr(), except it locates the last occurrence of c.
+     The strrchr() function is identical to strchr(), except it locates 
+     the last occurrence of c.
 
 RETURN VALUES
-     The functions strchr() and strrchr() return a pointer to the located character, or NULL if the character does not appear in the string.
+     The functions strchr() and strrchr() return a pointer to the located character,
+     or NULL if the character does not appear in the string.
 ```
-### ft_
+
+### ft_strnstr
 ```c
+SYNOPSIS
+     #include <string.h>
+
+     char *
+     strstr(const char *haystack, const char *needle);
+
+     char *
+     strcasestr(const char *haystack, const char *needle);
+
+     char *
+     strnstr(const char *haystack, const char *needle, size_t len);
+
+     #include <string.h>
+     #include <xlocale.h>
+
+     char *
+     strcasestr_l(const char *haystack, const char *needle, locale_t loc);
+
+DESCRIPTION
+     The strstr() function locates the first occurrence of the null-terminated 
+     string needle in the null-terminated string haystack.
+
+     The strcasestr() function is similar to strstr(), but ignores the 
+     case of both strings.
+
+     The strnstr() function locates the first occurrence of the null-terminated
+     string needle in the string haystack, where not more than len charac-
+     ters are searched.  Characters that appear after a `\0' character are not searched. 
+     Since the strnstr() function is a FreeBSD specific API, it should only be 
+     used when portability is not a concern.
+
+     While the strcasestr() function uses the current locale, the strcasestr_l()
+     function may be passed a locale directly. See xlocale(3) for more information.
+
+RETURN VALUES
+     If needle is an empty string, haystack is returned; if needle occurs nowhere
+     in haystack, NULL is returned; otherwise a pointer to the first char-
+     acter of the first occurrence of needle is returned.
 ```
-### ft_
+### ft_strncmp
 ```c
+SYNOPSIS
+     #include <string.h>
+
+     int
+     strcmp(const char *s1, const char *s2);
+
+     int
+     strncmp(const char *s1, const char *s2, size_t n);
+
+DESCRIPTION
+     The strcmp() and strncmp() functions lexicographically compare the
+     null-terminated strings s1 and s2.
+
+     The strncmp() function compares not more than n characters.  Because strncmp() 
+     is designed for comparing strings rather than binary data, charac-
+     ters that appear after a `\0' character are not compared.
+
+RETURN VALUES
+     The strcmp() and strncmp() functions return an integer greater than, equal to,
+     or less than 0, according as the string s1 is greater than, equal to, or less than
+     the string s2.  The comparison is done using unsigned characters, 
+     so that `\200' is greater than `\0'.
 ```
 ### ft_
 ```c
@@ -275,5 +331,5 @@ RETURN VALUES
 ```c
 ```
 
-> calma veloz que eu ainda não terminei o projeto.
+## Part 2 - Additional functions
 
