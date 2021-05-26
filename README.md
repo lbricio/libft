@@ -1,9 +1,8 @@
 # libft
 > calma veloz que eu ainda não terminei o projeto.
 
-meu proposito com esse readme é apresentar um breve resumo de cada função
-para que eu possa me lembrar no futuro, se em um dia já consegui esquecer,
-imagina depois de meses.
+o proposito desse readme é apresentar um breve resumo de cada função
+para que eu possa revisar no futuro.
 
 ## Part 1 - Libc functions
 
