@@ -305,18 +305,21 @@ SYNOPSIS
      atoi_l(const char *str, locale_t loc);
 
 DESCRIPTION
-     The atoi() function converts the initial portion of the string pointed to by str to int representation.
+     The atoi() function converts the initial portion of the string pointed 
+     to by str to int representation.
 
      It is equivalent to:
 
            (int)strtol(str, (char **)NULL, 10);
 
-     While the atoi() function uses the current locale, the atoi_l() function may be passed a locale directly. See xlocale(3) for more information.
+     While the atoi() function uses the current locale, the atoi_l() function
+     may be passed a locale directly. See xlocale(3) for more information.
 
 IMPLEMENTATION NOTES
      The atoi() and atoi_l() functions are thread-safe and async-cancel-safe.
 
-     The strtol() and strtol_l() functions are recommended instead of atoi() and atoi_l() functions, especially in new code.
+     The strtol() and strtol_l() functions are recommended instead of atoi()
+     and atoi_l() functions, especially in new code.
 ```
 ### ft_isalpha
 ```c
@@ -327,10 +330,12 @@ SYNOPSIS
      isalpha(int c);
 
 DESCRIPTION
-     The isalpha() function tests for any character for which isupper(3) or islower(3) is true.  The value of the argument must be representable as an
-     unsigned char or the value of EOF.
+     The isalpha() function tests for any character for which isupper(3) 
+     or islower(3) is true.  The value of the argument must be representable 
+     as an unsigned char or the value of EOF.
 
-     In the ASCII character set, this includes the following characters (preceded by their numeric values, in octal):
+     In the ASCII character set, this includes the following characters 
+     (preceded by their numeric values, in octal):
 
      101 ``A''     102 ``B''     103 ``C''     104 ``D''     105 ``E''
      106 ``F''     107 ``G''     110 ``H''     111 ``I''     112 ``J''
@@ -345,7 +350,8 @@ DESCRIPTION
      171 ``y''     172 ``z''
 
 RETURN VALUES
-     The isalpha() function returns zero if the character tests false and returns non-zero if the character tests true.
+     The isalpha() function returns zero if the character tests false 
+     and returns non-zero if the character tests true.
 ```
 ### ft_isdigit
 ```c
@@ -359,17 +365,21 @@ SYNOPSIS
      isnumber(int c);
 
 DESCRIPTION
-     The isdigit() function tests for a decimal digit character.  Regardless of locale, this includes the following characters only:
+     The isdigit() function tests for a decimal digit character.
+     Regardless of locale, this includes the following characters only:
 
      ``0''         ``1''         ``2''         ``3''         ``4''
      ``5''         ``6''         ``7''         ``8''         ``9''
 
-     The isnumber() function behaves similarly to isdigit(), but may recognize additional characters, depending on the current locale setting.
+     The isnumber() function behaves similarly to isdigit(), but may 
+     recognize additional characters, depending on the current locale setting.
 
-     The value of the argument must be representable as an unsigned char or the value of EOF.
+     The value of the argument must be representable as an unsigned char or
+     the value of EOF.
 
 RETURN VALUES
-     The isdigit() and isnumber() functions return zero if the character tests false and return non-zero if the character tests true.
+     The isdigit() and isnumber() functions return zero if the character 
+     tests false and return non-zero if the character tests true.
 ```
 ### ft_isalnum
 ```c
@@ -380,10 +390,12 @@ SYNOPSIS
      isalnum(int c);
 
 DESCRIPTION
-     The isalnum() function tests for any character for which isalpha(3) or isdigit(3) is true.  The value of the argument must be representable as an
-     unsigned char or the value of EOF.
+     The isalnum() function tests for any character for which isalpha(3) or 
+     isdigit(3) is true.  The value of the argument must be representable 
+     as an unsigned char or the value of EOF.
 
-     In the ASCII character set, this includes the following characters (preceded by their numeric values, in octal):
+     In the ASCII character set, this includes the following characters 
+     (preceded by their numeric values, in octal):
 
      060 ``0''     061 ``1''     062 ``2''     063 ``3''     064 ``4''
      065 ``5''     066 ``6''     067 ``7''     070 ``8''     071 ``9''
@@ -400,7 +412,8 @@ DESCRIPTION
      171 ``y''     172 ``z''
 
 RETURN VALUES
-     The isalnum() function returns zero if the character tests false and returns non-zero if the character tests true.
+     The isalnum() function returns zero if the character tests false 
+     and returns non-zero if the character tests true.
 ```
 ### ft_isascii
 ```c
@@ -411,7 +424,8 @@ SYNOPSIS
      isascii(int c);
 
 DESCRIPTION
-     The isascii() function tests for an ASCII character, which is any character between 0 and octal 0177 inclusive.
+     The isascii() function tests for an ASCII character, which is any
+     character between 0 and octal 0177 inclusive.
 ```
 ### ft_isprint
 ```c
@@ -422,10 +436,12 @@ SYNOPSIS
      isprint(int c);
 
 DESCRIPTION
-     The isprint() function tests for any printing character, including space (` ').  The value of the argument must be representable as an unsigned
-     char or the value of EOF.
+     The isprint() function tests for any printing character, including space (` ').
+     The value of the argument must be representable as an unsigned char or 
+     the value of EOF.
 
-     In the ASCII character set, this includes the following characters (preceded by their numeric values, in octal):
+     In the ASCII character set, this includes the following characters
+     (preceded by their numeric values, in octal):
 
      040 sp        041 ``!''     042 ``"''     043 ``#''     044 ``$''
      045 ``%''     046 ``&''     047 ``'''     050 ``(''     051 ``)''
@@ -448,7 +464,8 @@ DESCRIPTION
      172 ``z''     173 ``{''     174 ``|''     175 ``}''     176 ``~''
 
 RETURN VALUES
-     The isprint() function returns zero if the character tests false and returns non-zero if the character tests true.
+     The isprint() function returns zero if the character tests false
+     and returns non-zero if the character tests true.
 ```
 
 ### ft_calloc
@@ -475,7 +492,9 @@ SYNOPSIS
      valloc(size_t size);
 
 DESCRIPTION
-     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  The allocated memory is aligned such that it can be used
+     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  
+     The allocated memory is aligned such that it can be used
+     
      void *
      reallocf(void *ptr, size_t size);
 
@@ -483,35 +502,48 @@ DESCRIPTION
      valloc(size_t size);
      
 DESCRIPTION
-     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  The allocated memory is aligned such that it can be used
-     for any data type, including AltiVec- and SSE-related types.  The free() function frees allocations that were created via the preceding allocation
-     functions.
+     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  
+     The allocated memory is aligned such that it can be used
+     for any data type, including AltiVec- and SSE-related types.  The free() function 
+     frees allocations that were created via the preceding allocation functions.
 
-     The malloc() function allocates size bytes of memory and returns a pointer to the allocated memory.
+     The malloc() function allocates size bytes of memory and returns a pointer 
+     to the allocated memory.
 
-     The calloc() function contiguously allocates enough space for count objects that are size bytes of memory each and returns a pointer to the allo-
+     The calloc() function contiguously allocates enough space for count objects 
+     that are size bytes of memory each and returns a pointer to the allo-
      cated memory.  The allocated memory is filled with bytes of value zero.
 
-     The valloc() function allocates size bytes of memory and returns a pointer to the allocated memory.  The allocated memory is aligned on a page
-     boundary.
+     The valloc() function allocates size bytes of memory and returns a pointer 
+     to the allocated memory.  The allocated memory is aligned on a page boundary.
 
-     The realloc() function tries to change the size of the allocation pointed to by ptr to size, and returns ptr.  If there is not enough room to
-     enlarge the memory allocation pointed to by ptr, realloc() creates a new allocation, copies as much of the old data pointed to by ptr as will fit
-     to the new allocation, frees the old allocation, and returns a pointer to the allocated memory.  If ptr is NULL, realloc() is identical to a call
-     to malloc() for size bytes.  If size is zero and ptr is not NULL, a new, minimum sized object is allocated and the original object is freed.  When
-     extending a region allocated with calloc(3), realloc(3) does not guarantee that the additional memory is also zero-filled.
+     The realloc() function tries to change the size of the allocation pointed to
+     by ptr to size, and returns ptr.  If there is not enough room to
+     enlarge the memory allocation pointed to by ptr, realloc() creates a new 
+     allocation, copies as much of the old data pointed to by ptr as will fit
+     to the new allocation, frees the old allocation, and returns a pointer 
+     to the allocated memory.  If ptr is NULL, realloc() is identical to a call
+     to malloc() for size bytes.  If size is zero and ptr is not NULL, a new, 
+     minimum sized object is allocated and the original object is freed.  When
+     extending a region allocated with calloc(3), realloc(3) does not guarantee
+     that the additional memory is also zero-filled.
 
-     The reallocf() function is identical to the realloc() function, except that it will free the passed pointer when the requested memory cannot be
-     allocated.  This is a FreeBSD specific API designed to ease the problems with traditional coding styles for realloc causing memory leaks in
+     The reallocf() function is identical to the realloc() function, except that 
+     it will free the passed pointer when the requested memory cannot be
+     allocated.  This is a FreeBSD specific API designed to ease the problems 
+     with traditional coding styles for realloc causing memory leaks in
      libraries.
 
-     The free() function deallocates the memory allocation pointed to by ptr. If ptr is a NULL pointer, no operation is performed.
+     The free() function deallocates the memory allocation pointed to by ptr. 
+     If ptr is a NULL pointer, no operation is performed.
 
 RETURN VALUES
-     If successful, calloc(), malloc(), realloc(), reallocf(), and valloc() functions return a pointer to allocated memory.  If there is an error, they
+     If successful, calloc(), malloc(), realloc(), reallocf(), and valloc() 
+     functions return a pointer to allocated memory.  If there is an error, they
      return a NULL pointer and set errno to ENOMEM.
 
-     For realloc(), the input pointer is still valid if reallocation failed.  For reallocf(), the input pointer will have been freed if reallocation
+     For realloc(), the input pointer is still valid if reallocation failed.  
+     For reallocf(), the input pointer will have been freed if reallocation
      failed.
 
      The free() function does not return a value.
@@ -528,12 +560,15 @@ SYNOPSIS
      strndup(const char *s1, size_t n);
 
 DESCRIPTION
-     The strdup() function allocates sufficient memory for a copy of the string s1, does the copy, and returns a pointer to it.  The pointer may subse-
+     The strdup() function allocates sufficient memory for a copy of the string s1, 
+     does the copy, and returns a pointer to it.  The pointer may subse-
      quently be used as an argument to the function free(3).
 
-     If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
+     If insufficient memory is available, NULL is returned and errno is
+     set to ENOMEM.
 
-     The strndup() function copies at most n characters from the string s1 always NUL terminating the copied string.
+     The strndup() function copies at most n characters from the string s1
+     always NUL terminating the copied string.
 ```
 ## Part 2 - Additional functions
 
