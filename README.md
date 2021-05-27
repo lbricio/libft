@@ -470,6 +470,57 @@ RETURN VALUES
 `OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... números de 0 a 7 (oito algarismos distintos), 
 enquanto a decimal seria 0 a 9(10 algarismos distintos).
 
+### ft_toupper
+```c
+SYNOPSIS
+     #include <ctype.h>
+
+     int
+     toupper(int c);
+
+     #include <ctype.h>
+     #include <xlocale.h>
+
+     int
+     toupper_l(int c, locale_t loc);
+
+DESCRIPTION
+     The toupper() function converts a lower-case letter to the corresponding upper-case letter.  The argument must be representable as an unsigned
+     char or the value of EOF.
+
+     Although the toupper() function uses the current locale, the toupper_l() function may be passed a locale directly. See xlocale(3) for more infor-
+     mation.
+
+RETURN VALUES
+     If the argument is a lower-case letter, the toupper() function returns the corresponding upper-case letter if there is one; otherwise, the argu-
+     ment is returned unchanged.
+```
+### ft_tolower
+```c
+SYNOPSIS
+     #include <ctype.h>
+
+     int
+     tolower(int c);
+
+     #include <ctype.h>
+     #include <xlocale.h>
+
+     int
+     tolower_l(int c, locale_t loc);
+
+DESCRIPTION
+     The tolower() function converts an upper-case letter to the corresponding lower-case letter.  The argument must be representable as an unsigned
+     char or the value of EOF.
+
+     Although the tolower() function uses the current locale, the tolower_l() function may be passed a locale directly. See xlocale(3) for more infor-
+     mation.
+
+RETURN VALUES
+     If the argument is an upper-case letter, the tolower() function returns the corresponding lower-case letter if there is one; otherwise, the argu-
+     ment is returned unchanged.
+```
+
 ### ft_calloc
 ```c
 SYNOPSIS
