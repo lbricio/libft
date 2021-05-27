@@ -443,7 +443,7 @@ DESCRIPTION
      In the ASCII character set, this includes the following characters
      (preceded by their numeric values, in octal):
 
-     040 sp        041 ``!''     042 ``"''     043 ``#''     044 ``$''
+     040 (space)   041 ``!''     042 ``"''     043 ``#''     044 ``$''
      045 ``%''     046 ``&''     047 ``'''     050 ``(''     051 ``)''
      052 ``*''     053 ``+''     054 ``,''     055 ``-''     056 ``.''
      057 ``/''     060 ``0''     061 ``1''     062 ``2''     063 ``3''
@@ -467,6 +467,8 @@ RETURN VALUES
      The isprint() function returns zero if the character tests false
      and returns non-zero if the character tests true.
 ```
+`OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... números de 0 a 7 (oito algarismos distintos), 
+enquanto a decimal seria 0 a 9(10 algarismos distintos).
 
 ### ft_calloc
 ```c
