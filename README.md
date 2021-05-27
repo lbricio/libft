@@ -553,49 +553,53 @@ DESCRIPTION
 ![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
 
 ### ft_itoa
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
+
+
 ### ft_strmapi
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757361-3981e100-be7b-11eb-929a-025dbc2d2354.png)
+
+
 ### ft_putchar_fd
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757385-41418580-be7b-11eb-8195-14e0b278c775.png)
+
+
 ### ft_putstr_fd
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757400-48689380-be7b-11eb-8e2c-230e45b46f4c.png)
+
+
 ### ft_putendl_fd
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757423-4f8fa180-be7b-11eb-870f-7506f80d443c.png)
+
+
 ### ft_putnbr_fd
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757440-55858280-be7b-11eb-836c-2b333a5f4d16.png)
+
 ## Part 3 - Bonus functions
 
 ### ft_lstnew
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757468-5fa78100-be7b-11eb-8fbe-1e56e66e8276.png)
+
 ### ft_lstadd_front
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757488-6635f880-be7b-11eb-92a2-c57cc976cce1.png)
+
 ### ft_lstsize
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757508-6c2bd980-be7b-11eb-9c4a-05e9f1b4679f.png)
+
 ### ft_lstlast
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757538-7352e780-be7b-11eb-87fb-55661d77db8d.png)
+
 ### ft_lstadd_back
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757561-7b128c00-be7b-11eb-9152-1baddee19530.png)
+
 ### ft_lstdelone
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757575-81086d00-be7b-11eb-8417-86719df0c862.png)
+
 ### ft_lstclear
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757591-8796e480-be7b-11eb-900d-d29f32c48cc8.png)
+
 ### ft_lstiter
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757608-8d8cc580-be7b-11eb-9fd8-ae9c63d3619b.png)
+
 ### ft_lstmap
-```c
-```
+![image](https://user-images.githubusercontent.com/81334995/119757621-9382a680-be7b-11eb-9635-8ea97b02a4d6.png)
