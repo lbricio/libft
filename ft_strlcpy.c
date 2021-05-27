@@ -6,26 +6,25 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:11:53 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/23 02:01:10 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 00:32:18 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t maxlen)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	maxlen;
-	size_t	x;
+	size_t	srcsize;
 
 	if (!dst || !src)
 		return (0);
-	maxlen = ft_strlen(src);
-	x = 0;
-	while (src[x] != '\0' && x < (maxlen - 1))
+	srcsize = ft_strlen(src);
+	if (srcsize < dstsize)
+		ft_memcpy(dst, src, srcsize + 1);
+	else if (dstsize)
 	{
-		dst[x] = src[x];
-		x++;
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	dst[x] = '\0';
-	return (maxlen);
+	return (srcsize);
 }

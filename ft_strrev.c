@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 02:19:02 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/26 18:10:49 by lbricio-         ###   ########.fr       */
+/*   Created: 2021/05/27 00:41:48 by lbricio-          #+#    #+#             */
+/*   Updated: 2021/05/27 00:41:50 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrev(char *str)
 {
-	ft_memset(s, 0x00, n);
+	size_t	i;
+	size_t	len;
+	char	tmp;
+
+	if (!str || !*str)
+		return (str);
+	len = ft_strlen(str);
+	i = 0;
+	while (i < len / 2)
+	{
+		tmp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = tmp;
+		i++;
+	}
+	return (str);
 }

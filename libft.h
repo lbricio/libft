@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 13:33:56 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/26 11:42:54 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 10:43:02 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
+char			*ft_strrev(char *str);
 
 #endif

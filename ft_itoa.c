@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:36:38 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/26 00:17:26 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/27 10:36:46 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	num = ft_calloc(width + 1, sizeof(char));
 	if (!num)
-		return (0);
+		return (NULL);
 	if (neg)
 		n = -n;
 	i = 0;

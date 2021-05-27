@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:03:08 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/24 01:22:21 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/26 19:58:55 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		x++;
 	}
 	return (dst);
-}
+}	
