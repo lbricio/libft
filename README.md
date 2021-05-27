@@ -450,27 +450,152 @@ DESCRIPTION
 RETURN VALUES
      The isprint() function returns zero if the character tests false and returns non-zero if the character tests true.
 ```
-### ft_
-```c
-```
-### ft_
-```c
-```
-### ft_
-```c
-```
-### ft_
-```c
-```
-### ft_
-```c
-```
-### ft_
-```c
-```
-### ft_
-```c
-```
 
+### ft_calloc
+```c
+SYNOPSIS
+     #include <stdlib.h>
+
+     void *
+     calloc(size_t count, size_t size);
+
+     void
+     free(void *ptr);
+
+     void *
+     malloc(size_t size);
+
+     void *
+     realloc(void *ptr, size_t size);
+
+     void *
+     reallocf(void *ptr, size_t size);
+
+     void *
+     valloc(size_t size);
+
+DESCRIPTION
+     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  The allocated memory is aligned such that it can be used
+     void *
+     reallocf(void *ptr, size_t size);
+
+     void *
+     valloc(size_t size);
+     
+DESCRIPTION
+     The malloc(), calloc(), valloc(), realloc(), and reallocf() functions allocate memory.  The allocated memory is aligned such that it can be used
+     for any data type, including AltiVec- and SSE-related types.  The free() function frees allocations that were created via the preceding allocation
+     functions.
+
+     The malloc() function allocates size bytes of memory and returns a pointer to the allocated memory.
+
+     The calloc() function contiguously allocates enough space for count objects that are size bytes of memory each and returns a pointer to the allo-
+     cated memory.  The allocated memory is filled with bytes of value zero.
+
+     The valloc() function allocates size bytes of memory and returns a pointer to the allocated memory.  The allocated memory is aligned on a page
+     boundary.
+
+     The realloc() function tries to change the size of the allocation pointed to by ptr to size, and returns ptr.  If there is not enough room to
+     enlarge the memory allocation pointed to by ptr, realloc() creates a new allocation, copies as much of the old data pointed to by ptr as will fit
+     to the new allocation, frees the old allocation, and returns a pointer to the allocated memory.  If ptr is NULL, realloc() is identical to a call
+     to malloc() for size bytes.  If size is zero and ptr is not NULL, a new, minimum sized object is allocated and the original object is freed.  When
+     extending a region allocated with calloc(3), realloc(3) does not guarantee that the additional memory is also zero-filled.
+
+     The reallocf() function is identical to the realloc() function, except that it will free the passed pointer when the requested memory cannot be
+     allocated.  This is a FreeBSD specific API designed to ease the problems with traditional coding styles for realloc causing memory leaks in
+     libraries.
+
+     The free() function deallocates the memory allocation pointed to by ptr. If ptr is a NULL pointer, no operation is performed.
+
+RETURN VALUES
+     If successful, calloc(), malloc(), realloc(), reallocf(), and valloc() functions return a pointer to allocated memory.  If there is an error, they
+     return a NULL pointer and set errno to ENOMEM.
+
+     For realloc(), the input pointer is still valid if reallocation failed.  For reallocf(), the input pointer will have been freed if reallocation
+     failed.
+
+     The free() function does not return a value.
+```
+### ft_strdup
+```c
+SYNOPSIS
+     #include <string.h>
+
+     char *
+     strdup(const char *s1);
+
+     char *
+     strndup(const char *s1, size_t n);
+
+DESCRIPTION
+     The strdup() function allocates sufficient memory for a copy of the string s1, does the copy, and returns a pointer to it.  The pointer may subse-
+     quently be used as an argument to the function free(3).
+
+     If insufficient memory is available, NULL is returned and errno is set to ENOMEM.
+
+     The strndup() function copies at most n characters from the string s1 always NUL terminating the copied string.
+```
 ## Part 2 - Additional functions
 
+### ft_substr
+
+![image](https://user-images.githubusercontent.com/81334995/119757153-ec057400-be7a-11eb-91c1-4ba08168228b.png)
+
+### ft_strjoin
+![image](https://user-images.githubusercontent.com/81334995/119757194-faec2680-be7a-11eb-86d4-c18d68ba8aa1.png)
+
+
+### ft_strtrim
+![image](https://user-images.githubusercontent.com/81334995/119757213-05a6bb80-be7b-11eb-8115-fc9fb4469544.png)
+
+
+### ft_split
+![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
+
+### ft_itoa
+```c
+```
+### ft_strmapi
+```c
+```
+### ft_putchar_fd
+```c
+```
+### ft_putstr_fd
+```c
+```
+### ft_putendl_fd
+```c
+```
+### ft_putnbr_fd
+```c
+```
+## Part 3 - Bonus functions
+
+### ft_lstnew
+```c
+```
+### ft_lstadd_front
+```c
+```
+### ft_lstsize
+```c
+```
+### ft_lstlast
+```c
+```
+### ft_lstadd_back
+```c
+```
+### ft_lstdelone
+```c
+```
+### ft_lstclear
+```c
+```
+### ft_lstiter
+```c
+```
+### ft_lstmap
+```c
+```
