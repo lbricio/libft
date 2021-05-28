@@ -36,10 +36,8 @@ SYNOPSIS
 DESCRIPTION
      The bzero() function writes n zeroed bytes to the string s.
      If n is zero, bzero() does nothing.
-     
-
 ```
-
+preenche os primeiro n bytes da string s com zero.
 
 ### ft_memcpy
 ```c
@@ -85,10 +83,6 @@ e a função retornará um ponteiro para o primeiro caractere logo após c
 caso o caractere c não seja encontrado em src: 
 a cópia continuará até n bytes e o retorno da função será nulo.
 
-na função, usei o método de comparar as posições relativas  na memória para 
-evitar ovelap, foi bem complicadinho de entender, mas basicamente serve pra 
-ver se é melhor copiar e colar do começo para o fim ou do fim para o começo.
-
 essa string é útil por exemplo para ler um texto e transformar cada palavra em 
 uma string diferente usando espaço como delimitador.
 
@@ -108,7 +102,9 @@ DESCRIPTION
 RETURN VALUES
      The memmove() function returns the original value of dst.
 ```
-copia len bytes de source para destiny,
+copia len bytes da string source para destiny, de uma forma mais segura que memcpy. 
+
+na função, atribui o conteúdo das strings a outras strings temporárias no escopo da função e usei o método de comparar as posições relativas na memória para evitar ovelap, foi bem complicadinho de entender, mas basicamente serve pra ver se é melhor copiar e colar do começo para o fim ou do fim para o começo, para evitar que uma maior invada os endereços de memória da menor e tenhamos resultados indesejados.
 
 ### ft_memchr
 ```c
