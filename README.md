@@ -76,12 +76,9 @@ DESCRIPTION
 ```
 copia bytes da string source para destiny, 
 
-se o caractere c for encontrado em src:
-a string source para de copiar imediatamente, o caractere c não é copiado, 
-e a função retornará um ponteiro para o primeiro caractere logo após c
+se o caractere c for encontrado em src -> a string source para de copiar imediatamente, o caractere c não é copiado, e a função retornará um ponteiro para o primeiro caractere logo após c
 
-caso o caractere c não seja encontrado em src:
-a cópia continuará até n bytes e o retorno da função será nulo.
+caso o caractere c não seja encontrado em src -> a cópia continuará até n bytes e o retorno da função será nulo.
 
 essa string é útil por exemplo para ler um texto e transformar cada palavra em 
 uma string diferente usando espaço como delimitador.
@@ -122,6 +119,7 @@ RETURN VALUES
      The memchr() function returns a pointer to the byte located, 
      or NULL if no such byte exists within n bytes.
 ```
+procura pela primeira ocorrência do caractere c e retorna um ponteiro para esse caractere, se percorrer n posições e não encontrar retorna (NULL).
 
 
 ### ft_memcmp
@@ -143,6 +141,7 @@ RETURN VALUES
      Zero-length strings are always identical.  This behavior is not required by C and
      portable code should only depend on the sign of the returned value.
 ```
+compara byte a byte das duas strings até o n-ésimo byte, caso eles sejam idênticos até o n-ésimo byte retornará nulo, caso algum byte seja diferente retornará uma arimética entre os códigos ascii dos caracteres.
 
 ### ft_strlen
 ```c
