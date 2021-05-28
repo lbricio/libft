@@ -76,11 +76,13 @@ DESCRIPTION
 ```
 copia bytes da string source para destiny, 
 
-se o caractere c for encontrado em src: 
+se o caractere c for encontrado em src:
+
 a string source para de copiar imediatamente, o caractere c não é copiado, 
 e a função retornará um ponteiro para o primeiro caractere logo após c
 
-caso o caractere c não seja encontrado em src: 
+caso o caractere c não seja encontrado em src:
+
 a cópia continuará até n bytes e o retorno da função será nulo.
 
 essa string é útil por exemplo para ler um texto e transformar cada palavra em 
