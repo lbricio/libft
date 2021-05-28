@@ -36,6 +36,8 @@ SYNOPSIS
 DESCRIPTION
      The bzero() function writes n zeroed bytes to the string s.
      If n is zero, bzero() does nothing.
+     
+
 ```
 
 
@@ -55,7 +57,7 @@ DESCRIPTION
 RETURN VALUES
      The memcpy() function returns the original value of dst.
 ```
-
+copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null(0). 
 
 ### ft_memccpy
 ```c
@@ -74,7 +76,21 @@ DESCRIPTION
 
      The source and destination strings should not overlap, as the behavior is undefined.
 ```
+copia bytes da string source para destiny, 
 
+se o caractere c for encontrado em src: 
+a string source para de copiar imediatamente, o caractere c não é copiado, 
+e a função retornará um ponteiro para o primeiro caractere logo após c
+
+caso o caractere c não seja encontrado em src: 
+a cópia continuará até n bytes e o retorno da função será nulo.
+
+na função, usei o método de comparar as posições relativas  na memória para 
+evitar ovelap, foi bem complicadinho de entender, mas basicamente serve pra 
+ver se é melhor copiar e colar do começo para o fim ou do fim para o começo.
+
+essa string é útil por exemplo para ler um texto e transformar cada palavra em 
+uma string diferente usando espaço como delimitador.
 
 ### ft_memmove
 ```c
@@ -92,7 +108,7 @@ DESCRIPTION
 RETURN VALUES
      The memmove() function returns the original value of dst.
 ```
-
+copia len bytes de source para destiny,
 
 ### ft_memchr
 ```c
