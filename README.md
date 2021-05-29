@@ -211,7 +211,7 @@ RETURN VALUES
      of the string they tried to create.  For strlcpy() that means the
      length of src.  For strlcat() that means the initial length of dst plus the length of src.
 ```
-strlcpy copia de src para dst realizando um teste com os tamanhos para evitar resultados indesejados e em seguida retorna o tamanho de source. strlcat retorna o tamanho da string que tentamos criar, e realiza a concatenação somente se se a primeira string tiver espaço suficiente(contando com o nulo). ¹dstsize é o tamanho desejado da string destiny no final, contando com o cartere nulo.
+strlcpy copia de src para dst (diferentemente de strcpy é feito um teste antes comparando o tamanho das strings, para evitar resultados indesejados) e em seguida retorna o tamanho de source. strlcat retorna o tamanho da string que tentamos criar, e realiza a concatenação somente se se a primeira string tiver espaço suficiente (contando com o nulo). ¹dstsize é o tamanho desejado da string destiny no final, contando com o cartere nulo.
 
 ### ft_strchr and ft_strrchr
 ```c
@@ -279,6 +279,8 @@ RETURN VALUES
      in haystack, NULL is returned; otherwise a pointer to the first char-
      acter of the first occurrence of needle is returned.
 ```
+procurando agulha em um palheiro (needle = agulha, haystack = palheiro). essa função serve para procurar uma string dentro de outra string, caso a string seja encontrada é retornado um endereço para o começo dela, caso não seja encontrada returna nulo, caso a string a ser procurada seja vazia retorna o endereço de haystrack.
+
 ### ft_strncmp
 ```c
 SYNOPSIS
@@ -304,6 +306,7 @@ RETURN VALUES
      the string s2.  The comparison is done using unsigned characters, 
      so that `\200' is greater than `\0'.
 ```
+
 ### ft_atoi
 ```c
 SYNOPSIS
