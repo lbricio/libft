@@ -141,7 +141,7 @@ RETURN VALUES
      Zero-length strings are always identical.  This behavior is not required by C and
      portable code should only depend on the sign of the returned value.
 ```
-compara byte a byte das duas strings até o n-ésimo byte, caso eles sejam idênticos até o n-ésimo byte retornará nulo, caso algum byte seja diferente retornará uma arimética entre os códigos ascii dos caracteres.
+compara byte a byte das duas strings até o n-ésimo byte, caso eles sejam idênticos até o n-ésimo byte retornará nulo, caso algum byte seja diferente retornará a diferença(subtração simples do caractere de s1 - s2) entre seu códigos ascii dos caracteres.
 
 ### ft_strlen
 ```c
@@ -164,6 +164,7 @@ RETURN VALUES
      the terminating NUL character.  The strnlen() function returns either
      the same result as strlen() or maxlen, whichever is smaller.
 ```
+retorna a largura de uma string (quantidade de caracteres posteriores ao caractere nulo).
 
 
 ### ft_strlcpy and ft_strlcat
@@ -210,6 +211,7 @@ RETURN VALUES
      of the string they tried to create.  For strlcpy() that means the
      length of src.  For strlcat() that means the initial length of dst plus the length of src.
 ```
+strlcpy copia de src para dst realizando um teste com os tamanhos para evitar resultados indesejados e em seguida retorna o tamanho de source. strlcat retorna o tamanho da string que tentamos criar, e realiza a concatenação somente se se a primeira string tiver espaço suficiente(contando com o nulo). ¹dstsize é o tamanho desejado da string destiny no final, contando com o cartere nulo.
 
 ### ft_strchr and ft_strrchr
 ```c
