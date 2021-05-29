@@ -179,7 +179,7 @@ SYNOPSIS
      strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
 
 DESCRIPTION
-     The strlcpy() and strlcat() functions copy and concatenate strings with the
+     The strlcpy() and strlcat() functions copy and concatenate stsrings with the
      same input parameters and output result as snprintf(3).  They are
      designed to be safer, more consistent, and less error prone replacements
      for the easily misused functions strncpy(3) and strncat(3).
@@ -237,6 +237,7 @@ RETURN VALUES
      The functions strchr() and strrchr() return a pointer to the located character,
      or NULL if the character does not appear in the string.
 ```
+localizam e retornam o endereço do caractere c dentro de uma string, srchr retorna a primeira ocorrência, strrchr retorna sua última ocorrência.
 
 ### ft_strnstr
 ```c
@@ -306,6 +307,8 @@ RETURN VALUES
      the string s2.  The comparison is done using unsigned characters, 
      so that `\200' is greater than `\0'.
 ```
+comapra caractere a caractere das duas strings, caso encontre algum diferente até a n-ésima posição, retorna a diferença entre os dois códigos ascii, caso não encontre retornará null.
+
 
 ### ft_atoi
 ```c
@@ -337,6 +340,22 @@ IMPLEMENTATION NOTES
      The strtol() and strtol_l() functions are recommended instead of atoi()
      and atoi_l() functions, especially in new code.
 ```
+... só dá pra entender que a função atoi converte a parte inicial de uma string para um int, de resto o conteúdo do manual está meio nebuloso. há outras fontes que esclarecem melhor, basicamente é esperando que a string tenha esse formato: 
+
+TALVEZ apareçam antes do número:
+
+um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace) (como definido em isspace):
+' '      space 
+'\t'     horizontal tab 
+'\n'     newline
+'\v'     vertical tab 
+'\f'     feed 
+'\r'     carriage return
+
+em seguida, também opicional: um sinal de positivo ou negativo, 
+
+e logo depois um bloco de algarismos que formam um número, que são lidos até ser encontrado um caractere não númerico, a formato da string deve ser exatamente esse.
+
 ### ft_isalpha
 ```c
 SYNOPSIS
