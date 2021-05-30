@@ -649,6 +649,8 @@ RETURN VALUES
 
      The free() function does not return a value.
 ```
+calloc basicamente realiza um malloc(aloca memória para o seu programa) e preenche os bytes alocados com 0. e retorna o primeiro endereço para o conjunto de bytes alocados. ¹alocar memória também pode ser lido como solicitar que o "computador" disponibilize alguns blocos de memória para o seu programa, malloc por si só não atribui nenhum valor para esses blocos, apenas solicita.
+
 ### ft_strdup
 ```c
 SYNOPSIS
@@ -671,6 +673,8 @@ DESCRIPTION
      The strndup() function copies at most n characters from the string s1
      always NUL terminating the copied string.
 ```
+aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um ponteiro para o primeiro bloco dessa nova string criada.
+
 ## Part 2 - Additional functions
 
 ### ft_substr
