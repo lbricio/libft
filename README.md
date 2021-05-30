@@ -37,7 +37,7 @@ DESCRIPTION
      The bzero() function writes n zeroed bytes to the string s.
      If n is zero, bzero() does nothing.
 ```
-
+preenche os primeiro n bytes da string s com zero.
 
 ### ft_memcpy
 ```c
@@ -55,7 +55,7 @@ DESCRIPTION
 RETURN VALUES
      The memcpy() function returns the original value of dst.
 ```
-
+copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null(0). 
 
 ### ft_memccpy
 ```c
@@ -74,7 +74,14 @@ DESCRIPTION
 
      The source and destination strings should not overlap, as the behavior is undefined.
 ```
+copia bytes da string source para destiny, 
 
+se o caractere c for encontrado em src -> a string source para de copiar imediatamente, o caractere c não é copiado, e a função retornará um ponteiro para o primeiro caractere logo após c
+
+caso o caractere c não seja encontrado em src -> a cópia continuará até n bytes e o retorno da função será nulo.
+
+essa string é útil por exemplo para ler um texto e transformar cada palavra em 
+uma string diferente usando espaço como delimitador.
 
 ### ft_memmove
 ```c
@@ -92,7 +99,9 @@ DESCRIPTION
 RETURN VALUES
      The memmove() function returns the original value of dst.
 ```
+copia len bytes da string source para destiny, de uma forma mais segura que memcpy. 
 
+na função, atribui o conteúdo das strings a outras strings temporárias no escopo da função e usei o método de comparar as posições relativas na memória para evitar ovelap, foi bem complicadinho de entender, mas basicamente serve pra ver se é melhor copiar e colar do começo para o fim ou do fim para o começo, para evitar que uma maior invada os endereços de memória da menor e tenhamos resultados indesejados.
 
 ### ft_memchr
 ```c
@@ -110,6 +119,7 @@ RETURN VALUES
      The memchr() function returns a pointer to the byte located, 
      or NULL if no such byte exists within n bytes.
 ```
+procura pela primeira ocorrência do caractere c e retorna um ponteiro para esse caractere, se percorrer n posições e não encontrar retorna (NULL).
 
 
 ### ft_memcmp
@@ -131,6 +141,7 @@ RETURN VALUES
      Zero-length strings are always identical.  This behavior is not required by C and
      portable code should only depend on the sign of the returned value.
 ```
+compara byte a byte das duas strings até o n-ésimo byte, caso eles sejam idênticos até o n-ésimo byte retornará nulo, caso algum byte seja diferente retornará a diferença(subtração simples do caractere de s1 - s2) entre seu códigos ascii dos caracteres.
 
 ### ft_strlen
 ```c
@@ -153,6 +164,7 @@ RETURN VALUES
      the terminating NUL character.  The strnlen() function returns either
      the same result as strlen() or maxlen, whichever is smaller.
 ```
+retorna a largura de uma string (quantidade de caracteres posteriores ao caractere nulo).
 
 
 ### ft_strlcpy and ft_strlcat
@@ -167,7 +179,7 @@ SYNOPSIS
      strlcat(char * restrict dst, const char * restrict src, size_t dstsize);
 
 DESCRIPTION
-     The strlcpy() and strlcat() functions copy and concatenate strings with the
+     The strlcpy() and strlcat() functions copy and concatenate stsrings with the
      same input parameters and output result as snprintf(3).  They are
      designed to be safer, more consistent, and less error prone replacements
      for the easily misused functions strncpy(3) and strncat(3).
@@ -199,6 +211,7 @@ RETURN VALUES
      of the string they tried to create.  For strlcpy() that means the
      length of src.  For strlcat() that means the initial length of dst plus the length of src.
 ```
+strlcpy copia de src para dst (diferentemente de strcpy é feito um teste antes comparando o tamanho das strings, para evitar resultados indesejados) e em seguida retorna o tamanho de source. strlcat retorna o tamanho da string que tentamos criar, e realiza a concatenação somente se se a primeira string tiver espaço suficiente (contando com o nulo). ¹dstsize é o tamanho desejado da string destiny no final, contando com o cartere nulo.
 
 ### ft_strchr and ft_strrchr
 ```c
@@ -224,6 +237,7 @@ RETURN VALUES
      The functions strchr() and strrchr() return a pointer to the located character,
      or NULL if the character does not appear in the string.
 ```
+localizam e retornam o endereço do caractere c dentro de uma string, srchr retorna a primeira ocorrência, strrchr retorna sua última ocorrência.
 
 ### ft_strnstr
 ```c
@@ -266,6 +280,8 @@ RETURN VALUES
      in haystack, NULL is returned; otherwise a pointer to the first char-
      acter of the first occurrence of needle is returned.
 ```
+procurando agulha em um palheiro (needle = agulha, haystack = palheiro). essa função serve para procurar uma string dentro de outra string, caso a string seja encontrada é retornado um endereço para o começo dela, caso não seja encontrada returna nulo, caso a string a ser procurada seja vazia retorna o endereço de haystrack. ¹a função só pesquisa em haystack até len bytes. ²se deduz que a string needle existir vai estar sempre no fim de haystack já que a função não procura pelos caracteres após o primeiro '\0' encontrado e a string é estritamente terminada com '\0'.
+
 ### ft_strncmp
 ```c
 SYNOPSIS
@@ -291,6 +307,9 @@ RETURN VALUES
      the string s2.  The comparison is done using unsigned characters, 
      so that `\200' is greater than `\0'.
 ```
+comapra caractere a caractere das duas strings, caso encontre algum diferente até a n-ésima posição, retorna a diferença entre os dois códigos ascii, caso não encontre retornará null.
+
+
 ### ft_atoi
 ```c
 SYNOPSIS
@@ -321,6 +340,22 @@ IMPLEMENTATION NOTES
      The strtol() and strtol_l() functions are recommended instead of atoi()
      and atoi_l() functions, especially in new code.
 ```
+... só dá pra entender que a função atoi converte a parte inicial de uma string para um int, de resto o conteúdo do manual está meio nebuloso. há outras fontes que esclarecem melhor, basicamente é esperando que a string tenha esse formato: 
+
+TALVEZ apareçam antes do número:
+
+um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):
+' '      space 
+'\t'     horizontal tab 
+'\n'     newline
+'\v'     vertical tab 
+'\f'     feed 
+'\r'     carriage return
+
+em seguida, também opicional: um sinal de positivo ou negativo, 
+
+e logo depois um bloco de algarismos que formam um número, que são lidos até ser encontrado um caractere não númerico, a formato da string deve ser exatamente esse.
+
 ### ft_isalpha
 ```c
 SYNOPSIS
@@ -353,6 +388,8 @@ RETURN VALUES
      The isalpha() function returns zero if the character tests false 
      and returns non-zero if the character tests true.
 ```
+função simples que checa se um caractere é alfabético, se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isdigit
 ```c
 SYNOPSIS
@@ -381,6 +418,8 @@ RETURN VALUES
      The isdigit() and isnumber() functions return zero if the character 
      tests false and return non-zero if the character tests true.
 ```
+função simples que checa se um caractere é númerico, se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isalnum
 ```c
 SYNOPSIS
@@ -415,6 +454,8 @@ RETURN VALUES
      The isalnum() function returns zero if the character tests false 
      and returns non-zero if the character tests true.
 ```
+função simples que checa se um caractere é alfanúmerico(se é númerico ou alfabetico), se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isascii
 ```c
 SYNOPSIS
@@ -425,8 +466,10 @@ SYNOPSIS
 
 DESCRIPTION
      The isascii() function tests for an ASCII character, which is any
-     character between 0 and octal 0177 inclusive.
+     character between 0 and octal 0177(equivale a 127 em decimais).
 ```
+função simples que checa se um caractere pertence a tabela ASCII(0 a 127, não inclui os caracteres extendidos 128+), se sim retorna 1, caso contrário retornará 0. 
+
 ### ft_isprint
 ```c
 SYNOPSIS
@@ -467,7 +510,9 @@ RETURN VALUES
      The isprint() function returns zero if the character tests false
      and returns non-zero if the character tests true.
 ```
-`OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... números de 0 a 7 (oito algarismos distintos), 
+basicamente checa se o caractere está no intervalo de caracteres que são visiveis na tela. (código ASCII: 32 a 126).
+
+`OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... contendo números de 0 a 7 (oito algarismos distintos), 
 enquanto a decimal seria 0 a 9(10 algarismos distintos).
 
 ### ft_toupper
@@ -495,6 +540,8 @@ RETURN VALUES
      If the argument is a lower-case letter, the toupper() function returns the corresponding upper-case letter if there is one; otherwise, the argu-
      ment is returned unchanged.
 ```
+converte caracteres alfabeticos minúsculos para maiúsculos.
+
 ### ft_tolower
 ```c
 SYNOPSIS
@@ -520,6 +567,7 @@ RETURN VALUES
      If the argument is an upper-case letter, the tolower() function returns the corresponding lower-case letter if there is one; otherwise, the argu-
      ment is returned unchanged.
 ```
+converte caracteres alfabeticos maiúsculos para minúsculos.
 
 ### ft_calloc
 ```c
@@ -601,6 +649,8 @@ RETURN VALUES
 
      The free() function does not return a value.
 ```
+calloc basicamente realiza um malloc(aloca memória para o seu programa) e preenche os bytes alocados com 0. e retorna o primeiro endereço para o conjunto de bytes alocados. ¹alocar memória também pode ser lido como solicitar que o "computador" disponibilize alguns blocos de memória para o seu programa, malloc por si só não atribui nenhum valor para esses blocos, apenas solicita.
+
 ### ft_strdup
 ```c
 SYNOPSIS
@@ -623,11 +673,13 @@ DESCRIPTION
      The strndup() function copies at most n characters from the string s1
      always NUL terminating the copied string.
 ```
+aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um ponteiro para o primeiro bloco da nova string criada.
+
 ## Part 2 - Additional functions
 
 ### ft_substr
-
 ![image](https://user-images.githubusercontent.com/81334995/119757153-ec057400-be7a-11eb-91c1-4ba08168228b.png)
+cria uma `substring` a partir de uma string referenciada, começa a partir da posição `start`(posição inicial = 0) e sua largura máxima é definida por `len`(não incluindo o nulo).
 
 ### ft_strjoin
 ![image](https://user-images.githubusercontent.com/81334995/119757194-faec2680-be7a-11eb-86d4-c18d68ba8aa1.png)
@@ -635,6 +687,7 @@ DESCRIPTION
 
 ### ft_strtrim
 ![image](https://user-images.githubusercontent.com/81334995/119757213-05a6bb80-be7b-11eb-8115-fc9fb4469544.png)
+aloca uma nova string semelhante a s1, porém deleta(se houver) todas as ocorrências caractere set no inicio e no fim da srting e no fim da string s1, e retorna um ponteiro para a string que foi criada.
 
 
 ### ft_split
