@@ -673,7 +673,7 @@ DESCRIPTION
      The strndup() function copies at most n characters from the string s1
      always NUL terminating the copied string.
 ```
-aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um ponteiro para o primeiro bloco dessa nova string criada.
+aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um ponteiro para o primeiro bloco da nova string criada.
 
 ## Part 2 - Additional functions
 
