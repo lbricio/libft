@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 23:36:23 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/27 00:20:15 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/30 13:54:06 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new_str[y] = '\0';
 	return (new_str);
 }
-
-/* Allocates (with malloc(3)) and returns a substring from the string ’s’.
-The substring begins at index ’start’ and is of maximum size ’len’.
-RETURN: The substring. NULL if the allocation fails. */

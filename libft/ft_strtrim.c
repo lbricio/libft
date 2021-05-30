@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 01:49:10 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/26 00:20:12 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/30 13:51:56 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		i--;
 	return (ft_substr(s1, 0, i + 1));
 }
-
-/* aloca uma nova string semelhante a s1 porém com os caracteres
-especificados por set deletados no início e no fim da string s1
-retorna um ponteiro para a string que foi criada: s1 */
