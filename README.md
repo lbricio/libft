@@ -344,7 +344,7 @@ IMPLEMENTATION NOTES
 
 TALVEZ apareçam antes do número:
 
-um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace) (como definido em isspace):
+um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):
 ' '      space 
 '\t'     horizontal tab 
 '\n'     newline
@@ -388,6 +388,8 @@ RETURN VALUES
      The isalpha() function returns zero if the character tests false 
      and returns non-zero if the character tests true.
 ```
+função simples que checa se um caractere é alfabético, se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isdigit
 ```c
 SYNOPSIS
@@ -416,6 +418,8 @@ RETURN VALUES
      The isdigit() and isnumber() functions return zero if the character 
      tests false and return non-zero if the character tests true.
 ```
+função simples que checa se um caractere é númerico, se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isalnum
 ```c
 SYNOPSIS
@@ -450,6 +454,8 @@ RETURN VALUES
      The isalnum() function returns zero if the character tests false 
      and returns non-zero if the character tests true.
 ```
+função simples que checa se um caractere é alfanúmerico(se é númerico ou alfabetico), se sim retorna 1, caso contrário retornará 0.
+
 ### ft_isascii
 ```c
 SYNOPSIS
@@ -460,8 +466,10 @@ SYNOPSIS
 
 DESCRIPTION
      The isascii() function tests for an ASCII character, which is any
-     character between 0 and octal 0177 inclusive.
+     character between 0 and octal 0177(equivale a 127 em decimais).
 ```
+função simples que checa se um caractere pertence a tabela ASCII(0 a 127, não inclui os caracteres extendidos 128+), se sim retorna 1, caso contrário retornará 0. 
+
 ### ft_isprint
 ```c
 SYNOPSIS
@@ -502,7 +510,9 @@ RETURN VALUES
      The isprint() function returns zero if the character tests false
      and returns non-zero if the character tests true.
 ```
-`OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... números de 0 a 7 (oito algarismos distintos), 
+basicamente checa se o caractere está no intervalo de caracteres que são visiveis na tela. (código ASCII: 32 a 126).
+
+`OCTAL` 040 para `DECIMAL` é 32. A base octal funciona assim: 000,001,002,...006,007,010,011,012... contendo números de 0 a 7 (oito algarismos distintos), 
 enquanto a decimal seria 0 a 9(10 algarismos distintos).
 
 ### ft_toupper
@@ -530,6 +540,8 @@ RETURN VALUES
      If the argument is a lower-case letter, the toupper() function returns the corresponding upper-case letter if there is one; otherwise, the argu-
      ment is returned unchanged.
 ```
+converte caracteres alfabeticos minúsculos para maiúsculos.
+
 ### ft_tolower
 ```c
 SYNOPSIS
@@ -555,6 +567,7 @@ RETURN VALUES
      If the argument is an upper-case letter, the tolower() function returns the corresponding lower-case letter if there is one; otherwise, the argu-
      ment is returned unchanged.
 ```
+converte caracteres alfabeticos maiúsculos para minúsculos.
 
 ### ft_calloc
 ```c
