@@ -695,7 +695,18 @@ aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um
 ### ft_split
 ![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
 
-aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`. 
+aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`.
+
+essa função acabou ficando complicada, então vou colocar um resuminho aqui para esclarecer depois:
+
+i = index;
+nb_words = número de palavras;
+rtn = retorno;
+wordcount = conta a quantidade de palavras dentro da string, usando o delimitador;
+o while checa se estamos faz um teste para checar o delimitador(se encontrar move a posição da string com s++ e se o array de strings não chegou ao fim;
+rtn[i] = posição no array de strings;
+strsub/straloc = preenche cada posição com uma palavra(substring), faz o uso de straloc() para alocar memória e preenche os bytes com 0(nulo).
+(s + ft_wordlen) = move posições na string s para ler a próxima substring no próximo ciclo do while.
 
 ### ft_itoa
 ![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
