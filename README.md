@@ -692,33 +692,40 @@ aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um
 
 "apara uma string" aloca uma nova string semelhante a s1, porém deleta todas as ocorrências caractere set no inicio e no fim da srting e no fim da string s1, e retorna um ponteiro para a string que foi criada.
 
-
 ### ft_split
 ![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
-aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`.
+
+aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`. (rem = resto, n = int do parâmetro, na função construímos o núemro com o resto de trás pra frente depois invertemos a string e temos a resposta desejada).
 
 ### ft_itoa
 ![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
+
 cria uma srting com conteúdo idêntico ao int do parâmetro.
 
 ### ft_strmapi
 ![image](https://user-images.githubusercontent.com/81334995/119757361-3981e100-be7b-11eb-929a-025dbc2d2354.png)
 
+aloca uma nova string como cópia de `s` e aplica a função `f` a todos os caracteres dessa nova string.
 
 ### ft_putchar_fd
 ![image](https://user-images.githubusercontent.com/81334995/119757385-41418580-be7b-11eb-8195-14e0b278c775.png)
 
+sempre achei putchar muito autoexplicativa, basicamente você está invocando uma função write, nesse caso aqui você pode escolher o tipo de output do caractere (you can use 0, 1, or 2, to refer to standard input, standard output, or standard error, respectively).
 
 ### ft_putstr_fd
 ![image](https://user-images.githubusercontent.com/81334995/119757400-48689380-be7b-11eb-8e2c-230e45b46f4c.png)
 
+aqui você faz output de uma string completa e pode escolher o tipo de output. (you can use 0, 1, or 2, to refer to standard input, standard output, or standard error, respectively).
 
 ### ft_putendl_fd
 ![image](https://user-images.githubusercontent.com/81334995/119757423-4f8fa180-be7b-11eb-870f-7506f80d443c.png)
 
+aqui você faz output de uma string completa seguida por uma quebra de linha(marcador newline `\n`) e pode escolher o tipo de output. (you can use 0, 1, or 2, to refer to standard input, standard output, or standard error, respectively).
 
 ### ft_putnbr_fd
 ![image](https://user-images.githubusercontent.com/81334995/119757440-55858280-be7b-11eb-836c-2b333a5f4d16.png)
+
+faz output de um número. (you can use 0, 1, or 2, to refer to standard input, standard output, or standard error, respectively). usei recursão na função, é um método popular para exibir os algarismos um a um.
 
 ## Part 3 - Bonus functions
 
@@ -748,3 +755,5 @@ cria uma srting com conteúdo idêntico ao int do parâmetro.
 
 ### ft_lstmap
 ![image](https://user-images.githubusercontent.com/81334995/119757621-9382a680-be7b-11eb-9635-8ea97b02a4d6.png)
+
+nunca pensei que isso fosse chegar até o fim mesmo, obrigado a todos os envolvidos
