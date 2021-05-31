@@ -697,7 +697,7 @@ aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um
 
 aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`.
 
-essa função acabou ficando complicada, então vou colocar um resuminho aqui para esclarecer depois:
+essa função acabou ficando complicada, então vou colocar um resuminho aqui para esclarecer:
 
 i = index;
 
