@@ -340,7 +340,7 @@ IMPLEMENTATION NOTES
      The strtol() and strtol_l() functions are recommended instead of atoi()
      and atoi_l() functions, especially in new code.
 ```
-... só dá pra entender que a função atoi converte a parte inicial de uma string para um int, de resto o conteúdo do manual está meio nebuloso. há outras fontes que esclarecem melhor, basicamente é esperando que a string tenha esse formato: 
+... só dá pra entender que a função atoi cria uma string que é a conversão da parte inicial de uma string para um int, de resto o conteúdo do manual está meio nebuloso. há outras fontes que esclarecem melhor, basicamente é esperando que a string tenha o seguinte formato: 
 
 TALVEZ apareçam antes do número:
 
@@ -699,7 +699,7 @@ aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings
 
 ### ft_itoa
 ![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
-converte o int do parâmetro para uma string.
+cria uma srting com conteúdo idêntico ao int do parâmetro.
 
 ### ft_strmapi
 ![image](https://user-images.githubusercontent.com/81334995/119757361-3981e100-be7b-11eb-929a-025dbc2d2354.png)
