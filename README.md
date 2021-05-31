@@ -695,12 +695,12 @@ aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um
 ### ft_split
 ![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
 
-aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`. (rem = resto, n = int do parâmetro, na função construímos o núemro com o resto de trás pra frente depois invertemos a string e temos a resposta desejada).
+aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`. 
 
 ### ft_itoa
 ![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
 
-cria uma srting com conteúdo idêntico ao int do parâmetro.
+cria uma srting com conteúdo idêntico ao int do parâmetro (com os números convertidos para caracteres). (rem = resto, n = int do parâmetro, na função construímos o núemro com o resto de trás pra frente depois invertemos a string e temos a resposta desejada).
 
 ### ft_strmapi
 ![image](https://user-images.githubusercontent.com/81334995/119757361-3981e100-be7b-11eb-929a-025dbc2d2354.png)
