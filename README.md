@@ -679,23 +679,27 @@ aloca memória suficiente para copiar a string s1, realiza a cópia e retorna um
 
 ### ft_substr
 ![image](https://user-images.githubusercontent.com/81334995/119757153-ec057400-be7a-11eb-91c1-4ba08168228b.png)
-cria uma `substring` a partir de uma string referenciada, começa a partir da posição `start`(posição inicial = 0) e sua largura máxima é definida por `len`(não incluindo o nulo).
+
+"procura por uma srtring dentro de outra string" aloca e cria uma `substring` a partir de uma string referenciada, começa a partir da posição `start`(posição inicial = 0) e sua largura máxima é definida por `len`(exatamente a quantidade de caracteres, não incluindo o nulo). caso não consiga alocar: retornará nulo.
 
 ### ft_strjoin
 ![image](https://user-images.githubusercontent.com/81334995/119757194-faec2680-be7a-11eb-86d4-c18d68ba8aa1.png)
 
+"concatena strings" aloca uma nova srting de tamanho suficiente para para conter s1 e s2, e então a preenche com o conteúdo de s1 e s2, realizando uma concatenação.
 
 ### ft_strtrim
 ![image](https://user-images.githubusercontent.com/81334995/119757213-05a6bb80-be7b-11eb-8115-fc9fb4469544.png)
-aloca uma nova string semelhante a s1, porém deleta(se houver) todas as ocorrências caractere set no inicio e no fim da srting e no fim da string s1, e retorna um ponteiro para a string que foi criada.
+
+"apara uma string" aloca uma nova string semelhante a s1, porém deleta todas as ocorrências caractere set no inicio e no fim da srting e no fim da string s1, e retorna um ponteiro para a string que foi criada.
 
 
 ### ft_split
 ![image](https://user-images.githubusercontent.com/81334995/119757249-10f9e700-be7b-11eb-97e2-48a9e1d89745.png)
+aloca e retorna um array de strings(uma matriz), divindo a string `s` em strings menores tendo como delimitador o caractere `c`.
 
 ### ft_itoa
 ![image](https://user-images.githubusercontent.com/81334995/119757343-338c0000-be7b-11eb-939d-a45c5f42d349.png)
-
+converte o int do parâmetro para uma string.
 
 ### ft_strmapi
 ![image](https://user-images.githubusercontent.com/81334995/119757361-3981e100-be7b-11eb-929a-025dbc2d2354.png)
