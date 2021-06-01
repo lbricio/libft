@@ -741,6 +741,18 @@ faz output de um número. (you can use 0, 1, or 2, to refer to standard input, s
 
 ## Part 3 - Bonus functions
 
+```c
+typedef struct      s_list
+{
+void                *content;
+struct s_list       *next;
+}                   t_list;
+```
+• content : The data contained in the element. The void * allows to store any kind of data.
+
+• next : The next element’s address or NULL if it’s the last element.
+
+
 ### ft_lstnew
 ![image](https://user-images.githubusercontent.com/81334995/119757468-5fa78100-be7b-11eb-8fbe-1e56e66e8276.png)
 
