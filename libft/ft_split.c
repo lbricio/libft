@@ -6,13 +6,13 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:48:40 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/27 15:05:18 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:47:03 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_straloc(size_t size)
 {
 	char			*str;
 	unsigned int	i;
@@ -32,7 +32,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char			*str;
 	unsigned int	i;
 
-	str = ft_strnew(len);
+	str = ft_straloc(len);
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -97,6 +97,6 @@ char	**ft_split(const char *s, char c)
 		s = s + ft_wordlen((const char *)s, c);
 		i++;
 	}
-	rtn[i] = NULL;
+	rtn[i] = '\0';
 	return (rtn);
 }
