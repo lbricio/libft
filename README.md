@@ -758,20 +758,23 @@ basicamente estamos trabalhando com uma lista em que cada elemento é um struct 
 
 ### ft_lstnew
 ![image](https://user-images.githubusercontent.com/81334995/119757468-5fa78100-be7b-11eb-8fbe-1e56e66e8276.png)
-aloca espaço e cria um um novo struct(elemento), com o content determinado no parâmetro da função e com e define o next desse elemento como nulo; note que o elemento foi apenas criado, mas ainda não foi adicionado a sua lista uma vez que nenhum outro sctruct aponta para ele.
+aloca espaço e cria um um novo struct(elemento), com o content determinado no parâmetro da função e define o next desse elemento como NULL; note que o elemento foi apenas criado, mas ainda não foi adicionado a sua lista uma vez que nenhum outro sctruct aponta para ele.
 
 ### ft_lstadd_front
 ![image](https://user-images.githubusercontent.com/81334995/119757488-6635f880-be7b-11eb-92a2-c57cc976cce1.png)
-adiciona um sctuct criado previamente para a última posição da sua lista (semelhante a lógica de uma srting que a primeira posição começa na esquerda e a última na direita).
+adiciona um sctuct criado previamente para a primeira posição da sua lista (semelhante a lógica de uma srting onde a primeira posição começa na esquerda e a última à direita).
 
 ### ft_lstsize
 ![image](https://user-images.githubusercontent.com/81334995/119757508-6c2bd980-be7b-11eb-9c4a-05e9f1b4679f.png)
+retorna o número de elementos na lista, contando elemento por elemento e avançando a partir do endereço contido no next de cada elemento.
 
 ### ft_lstlast
 ![image](https://user-images.githubusercontent.com/81334995/119757538-7352e780-be7b-11eb-87fb-55661d77db8d.png)
+avança de elemento em elemento enquanto next existir, quando next for nulo então o último elemento foi alcançado e então a função retornará esse elemento .
 
 ### ft_lstadd_back
 ![image](https://user-images.githubusercontent.com/81334995/119757561-7b128c00-be7b-11eb-9152-1baddee19530.png)
+usa a função ft_lstlast para encontrar o último elemento da lista, e adiciona o elemento desejado logo após ele (agora temos um novo elemento final).
 
 ### ft_lstdelone
 ![image](https://user-images.githubusercontent.com/81334995/119757575-81086d00-be7b-11eb-8417-86719df0c862.png)
