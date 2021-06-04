@@ -778,6 +778,7 @@ usa a função ft_lstlast para encontrar o último elemento da lista, e adiciona
 
 ### ft_lstdelone
 ![image](https://user-images.githubusercontent.com/81334995/119757575-81086d00-be7b-11eb-8417-86719df0c862.png)
+(lst del one). deleta o content de um elemento da lista(sem afetar o seu next), a função de deletar é especificada por `*del` (del deve estar apontando para está função). em seguida o espaço ocupado por lst é liberado com a função free. 
 
 ### ft_lstclear
 ![image](https://user-images.githubusercontent.com/81334995/119757591-8796e480-be7b-11eb-900d-d29f32c48cc8.png)
