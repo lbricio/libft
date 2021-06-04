@@ -752,12 +752,17 @@ struct s_list       *next;
 
 • next : The next element’s address or NULL if it’s the last element.
 
+eu fiquei bastante confuso nessa parte, travei e fiquei sem progredir por alguns dias enquanto tentava entender como funcionava essa lista, infelizmente não havia lido direito o pdf(muitos dos problemas podem ser evitados com uma leitura atenta do pdf e manuais).
+
+basicamente estamos trabalhando com uma lista em que cada elemento é um struct e esse struct tem dois membros: um com seu conteúdo(content) e um membro chamado next com o endereço do próximo elemento(struct), basicamente uma lista de structs com dois ponteiros cada(content & next), honestamente nesse ponto você precisa estar bem familiarizado com ponteiros ou eles tornarão a sua vida miserável.
 
 ### ft_lstnew
 ![image](https://user-images.githubusercontent.com/81334995/119757468-5fa78100-be7b-11eb-8fbe-1e56e66e8276.png)
+aloca espaço e cria um um novo struct(elemento), com o content determinado no parâmetro da função e com e define o next desse elemento como nulo; note que o elemento foi apenas criado, mas ainda não foi adicionado a sua lista uma vez que nenhum outro sctruct aponta para ele ainda.
 
 ### ft_lstadd_front
 ![image](https://user-images.githubusercontent.com/81334995/119757488-6635f880-be7b-11eb-92a2-c57cc976cce1.png)
+adiciona um sctuct criado previamente para a última posição da sua lista (semelhante a lógica de uma srting que a primeira posição começa na esquerda e a última na direita).
 
 ### ft_lstsize
 ![image](https://user-images.githubusercontent.com/81334995/119757508-6c2bd980-be7b-11eb-9c4a-05e9f1b4679f.png)
