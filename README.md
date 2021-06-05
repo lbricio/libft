@@ -762,7 +762,7 @@ aloca espaço e cria um um novo struct(elemento), com o content determinado no p
 
 ### ft_lstadd_front
 ![image](https://user-images.githubusercontent.com/81334995/119757488-6635f880-be7b-11eb-92a2-c57cc976cce1.png)
-adiciona um sctuct criado previamente para a primeira posição da sua lista (semelhante a lógica de uma srting onde a primeira posição começa na esquerda e a última à direita).
+adiciona um sctuct criado previamente para a primeira posição da sua lista(front, semelhante a lógica de uma srting onde a primeira posição começa na esquerda e a última à direita).  <-start/front-----------end/back-<
 
 ### ft_lstsize
 ![image](https://user-images.githubusercontent.com/81334995/119757508-6c2bd980-be7b-11eb-9c4a-05e9f1b4679f.png)
@@ -782,11 +782,17 @@ usa a função ft_lstlast para encontrar o último elemento da lista, e adiciona
 
 ### ft_lstclear
 ![image](https://user-images.githubusercontent.com/81334995/119757591-8796e480-be7b-11eb-900d-d29f32c48cc8.png)
+"limpa" e um elemento e seus subsequentes usando uma função apontada por `*del` e `free`(para liberar o espaço na memória) , 
+
+depois de deletar, define `*lst` como nulo (lst apontava para o primeiro elemento a ser deletado e em sequência passa a ter os valores dos elementos seguintes e no fim é deletado). 
 
 ### ft_lstiter
 ![image](https://user-images.githubusercontent.com/81334995/119757608-8d8cc580-be7b-11eb-9fd8-ae9c63d3619b.png)
+aplica a função `(*f)` para um elemento e os elementos subsequentes.
 
 ### ft_lstmap
 ![image](https://user-images.githubusercontent.com/81334995/119757621-9382a680-be7b-11eb-9635-8ea97b02a4d6.png)
+limpa(clear/del) e preenche(interate) `lst` respectivamente com as funções `(*del)` e `(*f)`, se houverem outros elementos subsequentes linkados(através do next) à `lst` ocorrerá o mesmo processo com eles. no fim retorna o endereço para o começo da lista.
+
 
 nunca pensei que isso fosse chegar até o fim mesmo, obrigado a todos os envolvidos
