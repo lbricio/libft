@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:36:38 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/27 10:36:46 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/05 03:12:25 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,26 @@ static	size_t	get_width(int n)
 		width++;
 	}
 	return (width);
+}
+
+char	*strrev(char *str)
+{
+	size_t	i;
+	size_t	len;
+	char	tmp;
+
+	if (!str || !*str)
+		return (str);
+	len = ft_strlen(str);
+	i = 0;
+	while (i < len / 2)
+	{
+		tmp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = tmp;
+		i++;
+	}
+	return (str);
 }
 
 char	*ft_itoa(int n)
@@ -50,5 +70,5 @@ char	*ft_itoa(int n)
 	}
 	if (neg)
 		num[i - 1] = '-';
-	return (ft_strrev(num));
+	return (strrev(num));
 }

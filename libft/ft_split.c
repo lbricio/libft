@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:48:40 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/31 15:47:03 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/05 03:05:11 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_straloc(size_t size)
 	if (!str)
 		return (NULL);
 	while (i < size)
-		str[i++] = '\0';
-	str[i] = '\0';
+		str[i++] = 0;
+	str[i] = 0;
 	return (str);
 }
 
@@ -70,7 +70,7 @@ int	ft_wordlen(const char *s, char c)
 	int	len;
 
 	len = 0;
-	while (*s != c && *s != '\0')
+	while (*s != c && *s != 0)
 	{
 		len++;
 		s++;
@@ -91,12 +91,12 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	while (nb_words--)
 	{
-		while (*s == c && *s != '\0')
+		while (*s == c && *s != 0)
 			s++;
 		rtn[i] = ft_strsub((const char *)s, 0, ft_wordlen((const char *)s, c));
 		s = s + ft_wordlen((const char *)s, c);
 		i++;
 	}
-	rtn[i] = '\0';
+	rtn[i] = 0;
 	return (rtn);
 }

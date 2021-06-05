@@ -6,7 +6,7 @@
 #    By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 11:28:15 by lbricio-          #+#    #+#              #
-#    Updated: 2021/05/27 10:16:28 by lbricio-         ###   ########.fr        #
+#    Updated: 2021/06/05 03:10:30 by lbricio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRCS		=	ft_atoi.c\
 			ft_strlcat.c\
 			ft_strlcpy.c\
 			ft_strlen.c\
-			ft_strrev.c\
 			ft_strmapi.c\
 			ft_strncmp.c\
 			ft_strnstr.c\
