@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:36:38 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/06/05 03:12:25 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:24:17 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	size_t	get_width(int n)
 	return (width);
 }
 
-char	*strrev(char *str)
+static	char	*strrev(char *str)
 {
 	size_t	i;
 	size_t	len;

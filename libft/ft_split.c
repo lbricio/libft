@@ -6,97 +6,70 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:48:40 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/06/05 03:05:11 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/06 16:50:33 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_straloc(size_t size)
+static int	count_words(const char *str, char c)
 {
-	char			*str;
-	unsigned int	i;
+	int	i;
+	int	trigger;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (NULL);
-	while (i < size)
-		str[i++] = 0;
-	str[i] = 0;
-	return (str);
-}
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
-{
-	char			*str;
-	unsigned int	i;
-
-	str = ft_straloc(len);
-	if (str == NULL)
-		return (NULL);
-	i = 0;
-	while (len--)
-		str[i++] = s[start++];
-	str[i] = '\0';
-	return (str);
-}
-
-int	ft_wordcount(const char *s, char c)
-{
-	int	count;
-	int	flag;
-
-	count = 0;
-	flag = 0;
-	if (!s || !c)
-		return (0);
-	while (*s)
+	trigger = 0;
+	while (*str)
 	{
-		if (*s == c && flag == 1)
-			flag = 0;
-		if (*s != c && flag == 0)
+		if (*str != c && trigger == 0)
 		{
-			flag = 1;
-			count++;
+			trigger = 1;
+			i++;
 		}
-		s++;
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	return (count);
+	return (i);
 }
 
-int	ft_wordlen(const char *s, char c)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	int	len;
-
-	len = 0;
-	while (*s != c && *s != 0)
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
-
-char	**ft_split(const char *s, char c)
-{
+	char	*word;
 	int		i;
-	int		nb_words;
-	char	**rtn;
 
 	i = 0;
-	nb_words = ft_wordcount((const char *)s, c);
-	rtn = (char **)malloc(sizeof(char *) * (nb_words + 1));
-	if (rtn == NULL)
-		return (NULL);
-	while (nb_words--)
+	word = malloc((finish - start) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
+
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
+		return (0);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(s))
 	{
-		while (*s == c && *s != 0)
-			s++;
-		rtn[i] = ft_strsub((const char *)s, 0, ft_wordlen((const char *)s, c));
-		s = s + ft_wordlen((const char *)s, c);
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = -1;
+		}
 		i++;
 	}
-	rtn[i] = 0;
-	return (rtn);
+	split[j] = 0;
+	return (split);
 }
