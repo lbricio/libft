@@ -6,25 +6,30 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 02:37:53 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/26 10:03:21 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:59:12 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char	*ret;
-	size_t	i;
+	char	*res;
+	size_t	size;
+	size_t	x;
 
-	ret = ft_strdup(s);
-	if (!s || !f || !(ret))
+	if (s == NULL)
 		return (NULL);
-	i = 0;
-	while (ret[i])
+	size = ft_strlen(s);
+	res = malloc(size + 1);
+	if (res == NULL)
+		return (NULL);
+	x = 0;
+	while (x < size)
 	{
-		ret[i] = f(i, ret[i]);
-		i++;
+		res[x] = f(x, s[x]);
+		x++;
 	}
-	return (ret);
+	res[x] = '\0';
+	return (res);
 }

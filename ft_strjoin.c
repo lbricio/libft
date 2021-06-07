@@ -6,34 +6,29 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 23:58:02 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/30 15:34:04 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/07 14:58:32 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char	*new_str;
-	int		x;
-	int		y;
+	char	*res;
+	size_t	len;
+	size_t	x;
 
-	new_str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!(s1) || !(s2) || !(new_str))
-		return (0);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	res = malloc(len + 1);
+	if (res == NULL)
+		return (NULL);
 	x = 0;
-	while (s1[x] != '\0')
-	{
-		new_str[x] = s1[x];
-		x++;
-	}
-	y = 0;
-	while (s2[y] != '\0')
-	{
-		new_str[x] = s2[y];
-		x++;
-		y++;
-	}
-	new_str[x] = '\0';
-	return (new_str);
+	while (*s1)
+		res[x++] = *s1++;
+	while (*s2)
+		res[x++] = *s2++;
+	res[x] = '\0';
+	return (res);
 }
