@@ -794,4 +794,5 @@ aplica a função `(*f)` para um elemento e os elementos subsequentes.
 ![image](https://user-images.githubusercontent.com/81334995/119757621-9382a680-be7b-11eb-9635-8ea97b02a4d6.png)
 limpa(clear/del) e preenche(interate) `lst` respectivamente com as funções `(*del)` e `(*f)`, se houverem outros elementos subsequentes linkados(através do next) à `lst` ocorrerá o mesmo processo com eles. no fim retorna o endereço para o começo da lista.
 
+
 nunca pensei que isso fosse chegar até o fim mesmo, obrigado a todos os envolvidos
