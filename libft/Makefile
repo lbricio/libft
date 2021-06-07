@@ -6,9 +6,15 @@
 #    By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/21 11:28:15 by lbricio-          #+#    #+#              #
-#    Updated: 2021/06/05 20:58:02 by lbricio-         ###   ########.fr        #
+#    Updated: 2021/06/07 11:57:39 by lbricio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME		=	libft.a
+RM		=	rm -f
+LIB		=	ar rcs
+CC		=	gcc
+CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	ft_atoi.c\
 			ft_bzero.c\
@@ -58,32 +64,30 @@ SRCS_BONUS	=	ft_lstadd_back.c\
 OBJS		=	$(SRCS:.c=.o)
 OBJS_BONUS	=	$(SRCS_BONUS:.c=.o)
 
-NAME		=	libft.a
-RM		=	rm -f
-LIB		=	ar rcu
-CC		=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
-
 ifdef WITH_BONUS
 	OBJ_SWITCH = $(OBJS_BONUS)
 else
 	OBJ_SWITCH = $(OBJS)
 endif
 
-$(NAME)		:	$(OBJ_SWITCH)
+$(NAME):	$(OBJ_SWITCH)
 			$(LIB) $@ $^
 
-all		:	bonus $(NAME)
+all:		bonus $(NAME)
 
-clean		:
+clean:
 			$(RM) $(OBJS) $(OBJS_BONUS)
 
-fclean		:	clean
+fclean:		clean
 			$(RM) $(NAME)
 
-re		:	fclean all
+re:			fclean all
 
-bonus		:
+bonus:
 			$(MAKE) WITH_BONUS=1 $(NAME)
 
-.PHONY		:	all clean fclean re bonus
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+.PHONY:		all clean fclean re bonus so

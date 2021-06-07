@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 01:31:24 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/25 12:44:52 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/07 01:22:29 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@ int	ft_atoi(const char *str)
 {
 	long			result;
 	long			sign;
-	unsigned int	i;
+	unsigned int	x;
 
 	sign = 1;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	x = 0;
+	while (str[x] == ' ' || str[x] == '\t' || str[x] == '\n'
+		|| str[x] == '\r' || str[x] == '\v' || str[x] == '\f')
+		x++;
+	if (str[x] == '-' || str[x] == '+')
 	{
-		if (str[i] == '-')
+		if (str[x] == '-')
 			sign = -1;
-		i++;
+		x++;
 	}
 	result = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[x] >= '0' && str[x] <= '9')
 	{
-		result = result * 10 + str[i] - '0';
-		i++;
+		result = result * 10 + str[x] - '0';
+		x++;
 	}
 	return ((int)(result * sign));
 }
