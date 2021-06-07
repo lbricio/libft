@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 01:31:24 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/06/07 01:22:29 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/07 12:54:58 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int	ft_atoi(const char *str)
 		x++;
 	}
 	result = 0;
+	if (str[x] == "2147483647")
+	{
+		result = 2147483647
+		return ((int)(result * sign));
+	}
 	while (str[x] >= '0' && str[x] <= '9')
 	{
 		result = result * 10 + str[x] - '0';
