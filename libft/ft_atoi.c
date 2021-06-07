@@ -6,39 +6,40 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 01:31:24 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/06/07 12:54:58 by lbricio-         ###   ########.fr       */
+/*   Updated: 2021/06/07 13:03:14 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+static int	ft_isspace(int c)
 {
-	long			result;
-	long			sign;
-	unsigned int	x;
+	if (c == ' ' || c == '\n' || c == '\t' || c == '\r'
+		|| c == '\f' || c == '\v')
+		return (1);
+	return (0);
+}
 
+int	ft_atoi(const char *nptr)
+{
+	int	num;
+	int	sign;
+
+	while ((ft_isspace(*nptr)))
+		nptr++;
 	sign = 1;
-	x = 0;
-	while (str[x] == ' ' || str[x] == '\t' || str[x] == '\n'
-		|| str[x] == '\r' || str[x] == '\v' || str[x] == '\f')
-		x++;
-	if (str[x] == '-' || str[x] == '+')
+	if (*nptr == '+' || *nptr == '-')
 	{
-		if (str[x] == '-')
+		if (*nptr == '-')
 			sign = -1;
-		x++;
+		nptr++;
 	}
-	result = 0;
-	if (str[x] == "2147483647")
+	num = 0;
+	while ((ft_isdigit(*nptr)))
 	{
-		result = 2147483647
-		return ((int)(result * sign));
+		num *= 10;
+		num += sign * (*nptr - '0');
+		nptr++;
 	}
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		result = result * 10 + str[x] - '0';
-		x++;
-	}
-	return ((int)(result * sign));
+	return (num);
 }
