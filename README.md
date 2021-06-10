@@ -280,7 +280,10 @@ RETURN VALUES
      in haystack, NULL is returned; otherwise a pointer to the first char-
      acter of the first occurrence of needle is returned.
 ```
-procurando agulha em um palheiro (needle = agulha, haystack = palheiro). essa função serve para procurar uma string dentro de outra string, caso a string seja encontrada é retornado um endereço para o começo dela, caso não seja encontrada returna nulo, caso a string a ser procurada seja vazia retorna o endereço de haystrack. ¹a função só pesquisa em haystack até len bytes. ²se deduz que a string needle existir vai estar sempre no fim de haystack já que a função não procura pelos caracteres após o primeiro '\0' encontrado e a string é estritamente terminada com '\0'.
+procurando agulha em um palheiro (needle = agulha, haystack = palheiro). essa função serve para procurar uma string dentro de outra string, caso a string seja encontrada é retornado um endereço para o começo dela, caso não seja encontrada returna nulo, caso a string a ser procurada seja vazia retorna o endereço de haystrack.
+
+¹a função só pesquisa em haystack até len bytes.
+²se deduz que se a string needle existir vai estar sempre no fim de haystack já que a função não procura pelos caracteres após o primeiro '\0' encontrado e a string é estritamente terminada com '\0'.
 
 ### ft_strncmp
 ```c
