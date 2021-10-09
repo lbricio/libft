@@ -343,9 +343,8 @@ IMPLEMENTATION NOTES
      The strtol() and strtol_l() functions are recommended instead of atoi()
      and atoi_l() functions, especially in new code.
 ```
-... só dá pra entender que a função atoi cria uma string que é a conversão da parte inicial de uma string para um int, de resto o conteúdo do manual está meio nebuloso. há outras fontes que esclarecem melhor, basicamente é esperando que a string tenha o seguinte formato: 
-
-TALVEZ apareçam antes do número:
+... apesar do nome sugerir array to int, atoi na verdade recebe uma string como parâmetro e retorna um int. o formato esperado da string seria:
+WHITESPACE + SINAL POSITIVO E NEGATIVO + NÚMERO. podendo ser vários WHITESPACES e vários SINAIS antes do número. a leitura do número para ao encontrar um caractere não númerico
 
 um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):
 ' '      space 
@@ -354,10 +353,6 @@ um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):
 '\v'     vertical tab 
 '\f'     feed 
 '\r'     carriage return
-
-em seguida, também opicional: um sinal de positivo ou negativo, 
-
-e logo depois um bloco de algarismos que formam um número, que são lidos até ser encontrado um caractere não númerico, a formato da string deve ser exatamente esse.
 
 ### ft_isalpha
 ```c
