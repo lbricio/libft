@@ -344,8 +344,8 @@ IMPLEMENTATION NOTES
      and atoi_l() functions, especially in new code.
 ```
 ... apesar do nome sugerir array to int, atoi na verdade recebe uma string como parâmetro e retorna um int.\
-o formato esperado da string seria: WHITESPACE + SINAL POSITIVO E NEGATIVO + NÚMERO.\
-podendo ser vários WHITESPACES e vários SINAIS antes do número. a leitura do número para ao encontrar um caractere não númerico
+o formato esperado da string seria: WHITESPACE + SINAL POSITIVO E\OU NEGATIVO + NÚMERO.\
+podendo ser vários WHITESPACES e vários SINAIS positivos e/ou negativos (exemplo: +--+---) antes do número. a leitura do número para ao encontrar um caractere não númerico
 
 um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):\
 ' '      space\
