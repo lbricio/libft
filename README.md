@@ -343,15 +343,16 @@ IMPLEMENTATION NOTES
      The strtol() and strtol_l() functions are recommended instead of atoi()
      and atoi_l() functions, especially in new code.
 ```
-... apesar do nome sugerir array to int, atoi na verdade recebe uma string como parâmetro e retorna um int. o formato esperado da string seria:
-WHITESPACE + SINAL POSITIVO E NEGATIVO + NÚMERO. podendo ser vários WHITESPACES e vários SINAIS antes do número. a leitura do número para ao encontrar um caractere não númerico
+... apesar do nome sugerir array to int, atoi na verdade recebe uma string como parâmetro e retorna um int.\
+o formato esperado da string seria: WHITESPACE + SINAL POSITIVO E NEGATIVO + NÚMERO.\
+podendo ser vários WHITESPACES e vários SINAIS antes do número. a leitura do número para ao encontrar um caractere não númerico
 
-um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):
-' '      space 
-'\t'     horizontal tab 
-'\n'     newline
-'\v'     vertical tab 
-'\f'     feed 
+um conjunto de um ou mais caracteres que equivalem a um espaço(whitespace):\
+' '      space\
+'\t'     horizontal tab\
+'\n'     newline\
+'\v'     vertical tab\ 
+'\f'     feed\
 '\r'     carriage return
 
 ### ft_isalpha
