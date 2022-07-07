@@ -4,6 +4,7 @@
 > para que eu possa revisar no futuro. a ideia inicial é apresentar a
 > versão do manual e alguns comentários logo abaixo.
 
+<img width="644" alt="image" src="https://user-images.githubusercontent.com/81334995/177815107-33e301d1-f3bf-41c8-b211-d15db40657f9.png">
 
 ## Part 1 - Libc functions
 
