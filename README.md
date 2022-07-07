@@ -4,8 +4,6 @@
 > para que eu possa revisar no futuro e também ajudar meus irmãos anões da 42,
 > uso alguns trechos dos manuais seguido por comentários.
 
-<img width="644" alt="image" src="https://user-images.githubusercontent.com/81334995/177815107-33e301d1-f3bf-41c8-b211-d15db40657f9.png">
-
 ## Part 1 - Libc functions
 
 ### ft_memset
@@ -794,5 +792,4 @@ aplica a função `(*f)` para um elemento e os elementos subsequentes.
 ![image](https://user-images.githubusercontent.com/81334995/119757621-9382a680-be7b-11eb-9635-8ea97b02a4d6.png)
 limpa(clear/del) e preenche(interate) `lst` respectivamente com as funções `(*del)` e `(*f)`, se houverem outros elementos subsequentes linkados(através do next) à `lst` ocorrerá o mesmo processo com eles. no fim retorna o endereço para o começo da lista.
 
-
-nunca pensei que isso fosse chegar até o fim mesmo, obrigado a todos os envolvidos
+<img width="644" alt="image" src="https://user-images.githubusercontent.com/81334995/177815107-33e301d1-f3bf-41c8-b211-d15db40657f9.png">
