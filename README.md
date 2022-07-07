@@ -1,6 +1,6 @@
 # libft
 
-> o proposito desse readme é apresentar um breve resumo de cada função
+> o propósito desse readme é apresentar um breve resumo de cada função
 > para que eu possa revisar no futuro e também ajudar meus irmãos anões da 42,
 > uso alguns trechos dos manuais seguido por comentários.
 
