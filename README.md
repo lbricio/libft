@@ -1,8 +1,8 @@
 # libft
 
 > o proposito desse readme é apresentar um breve resumo de cada função
-> para que eu possa revisar no futuro e também ajudar meus irmãos anões da 42
-> faço o uso do conteúdo do man seguido por comentários.
+> para que eu possa revisar no futuro e também ajudar meus irmãos anões da 42,
+> uso alguns trechos dos manuais seguido por comentários.
 
 <img width="644" alt="image" src="https://user-images.githubusercontent.com/81334995/177815107-33e301d1-f3bf-41c8-b211-d15db40657f9.png">
 
