@@ -54,7 +54,7 @@ DESCRIPTION
 RETURN VALUES
      The memcpy() function returns the original value of dst.
 ```
-copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null (null == 0 == '/0'). 
+copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null. 
 
 ### ft_memccpy
 ```c
