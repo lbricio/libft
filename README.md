@@ -21,7 +21,7 @@ DESCRIPTION
 RETURN VALUES
      The memset() function returns its first argument.
 ```
-`memset()` preencherá os primeiros `n` bytes da memória apontados por `s` com o byte `c`. note que um `byte` tem `256` valores possíveis (`0` a `255` ou em binário: `00000000` a `11111111`) portanto a convencional usar o tipo `unsigned char` para essa representação, já que seu alcance é idêntico ao de um `byte`.
+`memset()` preencherá os primeiros `n` bytes da memória apontados por `s` com o byte `c`. note que um `byte` tem `256` valores possíveis (`0` a `255` ou em binário: `00000000` a `11111111`) portanto é convencional usar o tipo `unsigned char` para essa representação, já que seu alcance é idêntico ao de um `byte`.
 
 
 ### ft_bzero
@@ -54,7 +54,7 @@ DESCRIPTION
 RETURN VALUES
      The memcpy() function returns the original value of dst.
 ```
-copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null(0). 
+copia n bytes de src(string fonte) para dst(string destinatária), se dst não tiver espaço suficiente retornará null (null == 0 == '/0'). 
 
 ### ft_memccpy
 ```c
