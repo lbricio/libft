@@ -10,9 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+static int l_isupper(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
+	return (c >= 'A' && c <= 'Z');
+}
+
+static int l_islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
+}
+
+bool ft_isalpha(int c)
+{
+	return (l_isupper(c) && l_islower(c));
 }
