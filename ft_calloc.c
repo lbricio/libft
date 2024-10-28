@@ -6,7 +6,7 @@
 /*   By: lbricio- <lbricio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 11:40:17 by lbricio-          #+#    #+#             */
-/*   Updated: 2021/05/30 13:50:45 by lbricio-         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:42:42 by lbricio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	tot_size;
 	void	*dst;
 
-	tot_size = size * count;
-	dst = malloc(tot_size);
-	ft_memset(dst, 0, tot_size);
+	dst = malloc(count * size);
+	if (dst)
+		ft_bzero(dst, count * size);
 	return (dst);
 }
